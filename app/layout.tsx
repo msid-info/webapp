@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navigation from "@/src/components/Navigation";
+import Footer from "@/src/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "msid.info",
-  description: "",
+  description: "msid.info is a tool to help you understand your Entra ID Tenant.",
 };
 
 export default function RootLayout({
@@ -15,8 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+<html lang="en">
+	<head>
+		<link rel="icon" href="/logo.png" sizes="any" />
+	</head>
+	<body className={inter.className} style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+		<div style={{ flex: 1 }}>
+			<Navigation />
+			{children}
+		</div>
+		<Footer />
+	</body>
+</html>  );
 }

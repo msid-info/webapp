@@ -5,11 +5,21 @@
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
 	"updateContentCommand": "pnpm install",
 	"postAttachCommand": "pnpm dev",
-	"forwardPorts": [3000]
+	"forwardPorts": [3000],
+    "customizations": {
+        "vscode": {
+			"settings": {
+				"editor.detectIndentation": false,
+				"editor.insertSpaces": false,
+                "editor.tabSize": 2
+			},
+			"extensions": ["GitHub.copilot"]
+    }
     // "portsAttributes": {
     //     "3000": {
     //         "label": "Application",
     //         "onAutoForward": "openPreview"
     //     }
     // }
+    }
 }
