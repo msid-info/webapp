@@ -4,8 +4,9 @@ export const appmedatadata = {
 	name: "msid.info",
 	searchdescription: "Search (domain or email)",
 	header: "Entra Tenant Lookup",
-	// footerdescription: "Providing reliable tech since 1992",
+	// footerdescription: "",
 	copyright: `Copyright © ${year} - All right reserved`,
-	issuelink: "https://github.com/JustinIven/msid.info-webapp/issues/new/choose",
-	githublink: "https://github.com/JustinIven/msid.info-webapp"
+	issuelink: "https://github.com/msid-info/webapp/issues/new/choose",
+	githublink: "https://github.com/msid-info",
+	logolink: "https://avatars.githubusercontent.com/u/187807566?s=200&v=4"
 }

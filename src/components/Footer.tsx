@@ -1,6 +1,6 @@
 import { appmedatadata } from "@/src/data"
 import Image from "next/image"
-import logo from '@/public/logo.png'
+// import logo from '@/public/logo.png'
 import Link from "next/link"
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
 		<>
 			<footer className="footer footer-center p-10 bg-gray-100 dark:bg-gray-800  dark:text-white mt-5">
 				<aside>
-						<Image src={logo} height={50} width={50} quality={50} alt={appmedatadata.name} />
+						<Image src={appmedatadata.logolink} height={50} width={50} quality={50} alt={appmedatadata.name} />
 						<a href={appmedatadata.githublink} target="_blank" rel="noopener noreferrer">
 							<p className="btn btn-sm btn-ghost font-bold">
 								{appmedatadata.name} <br/>

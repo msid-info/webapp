@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/src/components/Navigation";
 import Footer from "@/src/components/Footer";
+import { appmedatadata } from "@/src/data";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,7 @@ export default function RootLayout({
   return (
 <html lang="en">
 	<head>
-		<link rel="icon" href="/logo.png" sizes="any" />
+		<link rel="icon" href={appmedatadata.logolink} sizes="any" />
 	</head>
 	<body className={inter.className} style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
 		<div style={{ flex: 1 }}>

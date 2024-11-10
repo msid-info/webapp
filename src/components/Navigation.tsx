@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { appmedatadata } from "../data"
 import Image from "next/image"
-import logo from '@/public/logo.png'
+// import logo from '@/public/logo.png'
 
 const Navigation = () => {
 	return (
@@ -11,7 +11,7 @@ const Navigation = () => {
 					<Link href={"/"}>
 
 						<div className="btn btn-ghost text-xl">
-							<Image src={logo} height={35} width={35} quality={50} alt={appmedatadata.name} />
+							<Image src={appmedatadata.logolink} height={35} width={35} quality={50} alt={appmedatadata.name} />
 							{appmedatadata.name}
 						</div>
 					</Link>
