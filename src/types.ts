@@ -76,7 +76,7 @@ export interface TenantInfo {
 
 // Error response interface
 export interface TenantInfoError {
-  detail: string;
+  error: string;
 }
 
 // Union type for the API response
