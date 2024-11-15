@@ -1,14 +1,14 @@
 import React from 'react';
-import { TenantInfo } from '../types';
+import { EnvironmentKey, TenantInfo, Environment } from '../types';
 
-const environments = {
+const environments: Record<EnvironmentKey, Environment> = {
   "Worldwide": { logo: "🌍" },
   "U.S. Government GCC High": { logo: "🇺🇸🏛️" },
   "U.S. Government DoD": { logo: "🇺🇸🛡️" },
   "Microsoft 365 operated by 21Vianet (China)": { logo: "🇨🇳" }
 };
 
-const TenantInfoCard = ({ title, children }) => (
+const TenantInfoCard: React.FC<{title: string, children: React.ReactNode}> = ({ title, children }) => (
   <div className="card bg-base-100 shadow-xl mb-6">
     <div className="card-body">
       <h2 className="card-title text-lg sm:text-xl">{title}</h2>
@@ -17,7 +17,7 @@ const TenantInfoCard = ({ title, children }) => (
   </div>
 );
 
-const TenantInfoItem = ({ label, value }) => (
+const TenantInfoItem: React.FC<{label: string, value: string | number | null | undefined }> = ({ label, value }) => (
   <div className="mb-2">
     <span className="font-medium">{label}: </span>
     <span className="break-words">{value !== null && value !== undefined ? value.toString() : 'N/A'}</span>
@@ -49,7 +49,7 @@ const TenantInfoComponent = ({ data }: { data: TenantInfo | null }) => {
       <TenantInfoCard title="Tenant Environment">
         <div className="flex items-center mb-2">
           <span className="text-xl sm:text-2xl mr-2">
-            {environments[data.tenantEnvironment.cloudInstanceDisplayName]?.logo || '🌐'}
+					{(environments[data.tenantEnvironment.cloudInstanceDisplayName as EnvironmentKey]?.logo || '🌐')}
           </span>
           <span className="break-words">{data.tenantEnvironment.cloudInstanceDisplayName}</span>
         </div>
@@ -177,7 +177,7 @@ const TenantInfoComponent = ({ data }: { data: TenantInfo | null }) => {
         <TenantInfoItem label="Long Running Transaction Partition" value={data.userInfo.callMetadata.longRunningTransactionPartition} />
         <TenantInfoItem label="Region" value={data.userInfo.callMetadata.region} />
         <TenantInfoItem label="Scale Unit" value={data.userInfo.callMetadata.scaleUnit} />
-        <TenantInfoItem label="Is Long Running Transaction" value={data.userInfo.callMetadata.isLongRunningTransaction} />
+        {/* <TenantInfoItem label="Is Long Running Transaction" value={data.userInfo.callMetadata.isLongRunningTransaction} /> */}
       </TenantInfoCard>
 
       <TenantInfoCard title="Domains">

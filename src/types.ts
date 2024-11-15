@@ -27,8 +27,8 @@ export interface TenantInfo {
     backgroundColor: string | null;
     boilerPlateText: string | null;
     userIdLabel: string | null;
-    keepMeSignedInDisabled: boolean | null;
-    useTransparentLightBox: boolean | null;
+    keepMeSignedInDisabled: boolean | undefined;
+    useTransparentLightBox: boolean | undefined;
   };
   userInfo: {
     username: string | null;
@@ -43,7 +43,7 @@ export interface TenantInfo {
       hasDesktopSso: boolean;
       hasRemoteNGC: boolean;
       hasFido: boolean;
-      otcNotAutoSent: boolean | null;
+      otcNotAutoSent: boolean | undefined;
       parameters: {
         remoteNgc: Record<string, any> | null;
         fido: Record<string, any> | null;
@@ -81,3 +81,13 @@ export interface TenantInfoError {
 
 // Union type for the API response
 export type TenantInfoResponse = TenantInfo | TenantInfoError;
+
+export type EnvironmentKey =
+  | "Worldwide"
+  | "U.S. Government GCC High"
+  | "U.S. Government DoD"
+  | "Microsoft 365 operated by 21Vianet (China)";
+	
+export interface Environment {
+	logo: string;
+}

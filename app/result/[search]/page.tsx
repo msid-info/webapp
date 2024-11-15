@@ -15,7 +15,7 @@ const getData = async (search: string) => {
 const ResultPage = async ({params}: { params: {search: string}}) => {
 	const data: TenantInfo | null | TenantInfoError = await getData(params.search)
 
-	if (data?.error === "Tenant not found") {
+  if (data && 'error' in data && data.error === "Tenant not found") {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <div className="p-6 bg-white rounded-lg shadow-lg text-center">
