@@ -1,3 +1,4 @@
+export const runtime = 'edge'
 import TenantInfoComponent from '@/src/components/Tenant';
 import { TenantInfo, TenantInfoError } from '../../../src/types'
 
