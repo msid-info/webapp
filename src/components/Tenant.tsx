@@ -194,7 +194,7 @@ const TenantInfoComponent = ({ data }: { data: TenantInfo | null }) => {
           View Raw Data
         </div>
         <div className="collapse-content"> 
-          <pre className="mockup-code text-xs sm:text-sm overflow-x-auto">
+          <pre className="mockup-code text-xs sm:text-sm overflow-x-scroll">
             <code>{JSON.stringify(data.raw, null, 2)}</code>
           </pre>
         </div>
