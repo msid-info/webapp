@@ -183,7 +183,7 @@ const TenantInfoComponent = ({ data }: { data: TenantInfo | null }) => {
       <TenantInfoCard title="Domains">
         <ul className="menu bg-base-200 w-full rounded-box">
           {data.domains.map((domain, index) => (
-            <li key={index}><a className="text-sm sm:text-base break-all">{domain}</a></li>
+            <p key={index} className="text-sm sm:text-base break-all">{domain}</p>
           ))}
         </ul>
       </TenantInfoCard>
